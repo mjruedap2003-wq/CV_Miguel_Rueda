@@ -3,56 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miguel José Rueda Parra | Diseñador Interactivo</title>
+    <title>Miguel Rueda | Interactive Designer & Visual Artist</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; line-height: 1.6; color: #333; background: #f9f9f9; }
-        .container { max-width: 800px; margin: auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1 { color: #111; margin-bottom: 5px; }
-        h2 { color: #0066cc; border-bottom: 2px solid #eee; padding-bottom: 5px; margin-top: 25px; }
-        .subtitle { font-weight: bold; color: #555; }
-        .contact a { color: #0066cc; text-decoration: none; margin-right: 15px; }
-        ul { padding-left: 20px; }
-        .job { margin-bottom: 15px; }
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@500;700;900&display=swap');
+
+        :root {
+            --bg-color: #E6E4EE;
+            --accent-red: #B7493A;
+            --accent-orange: #FF6F00;
+            --accent-yellow: #FFEE00;
+            --dark-brown: #583E00;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--dark-brown);
+            font-family: 'Space Grotesk', sans-serif;
+            padding: 20px;
+            overflow-x: hidden;
+            background-image: radial-gradient(var(--dark-brown) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* HEADER & HERO */
+        header {
+            background-color: var(--accent-yellow);
+            border: 4px solid var(--dark-brown);
+            box-shadow: 8px 8px 0px var(--dark-brown);
+            padding: 40px 30px;
+            margin-bottom: 40px;
+            transform: rotate(-1deg);
+            position: relative;
+        }
+
+        .tag-sticker {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background-color: var(--accent-red);
+            color: #fff;
+            padding: 5px 15px;
+            font-family: 'Bungee', cursive;
+            font-size: 0.8rem;
+            border: 3px solid var(--dark-brown);
+            transform: rotate(5deg);
+        }
+
+        h1 {
+            font-family: 'Bungee', cursive;
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            line-height: 1.1;
+            color: var(--dark-brown);
+            text-shadow: 3px 3px 0px var(--accent-orange);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 900;
+            background-color: var(--accent-orange);
+            color: #fff;
+            display: inline-block;
+            padding: 5px 12px;
+            border: 3px solid var(--dark-brown);
+            margin-bottom: 20px;
+        }
+
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .contact-btn {
+            background-color: var(--bg-color);
+            color: var(--dark-brown);
+            text-decoration: none;
+            font-weight: 900;
+            padding: 10px 18px;
+            border: 3px solid var(--dark-brown);
+            box-shadow: 4px 4px 0px var(--dark-brown);
+            transition: all 0.1s ease;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .contact-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--dark-brown);
+            background-color: var(--accent-red);
+            color: #fff;
+        }
+
+        /* SECCIONES GRÁFICAS */
+        section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-family: 'Bungee', cursive;
+            font-size: 1.8rem;
+            background-color: var(--accent-red);
+            color: #fff;
+            display: inline-block;
+            padding: 5px 15px;
+            border: 3px solid var(--dark-brown);
+            box-shadow: 5px 5px 0px var(--dark-brown);
+            margin-bottom: 20px;
+            transform: rotate(-1deg);
+        }
+
+        .card {
+            background-color: #fff;
+            border: 4px solid var(--dark-brown);
+            box-shadow: 6px 6px 0px var(--dark-brown);
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.01);
+        }
+
+        /* WORK / EXP */
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--dark-brown);
+        }
+
+        .job-role {
+            font-family: 'Bungee', cursive;
+            color: var(--accent-orange);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .job-date {
+            display: inline-block;
+            background-color: var(--accent-yellow);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border: 2px solid var(--dark-brown);
+            margin-bottom: 10px;
+        }
+
+        /* GRID SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-box {
+            background-color: var(--accent-yellow);
+            border: 4px solid var(--dark-brown);
+            box-shadow: 5px 5px 0px var(--dark-brown);
+            padding: 20px;
+        }
+
+        .skill-box h3 {
+            font-family: 'Bungee', cursive;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--dark-brown);
+            border-bottom: 3px solid var(--dark-brown);
+            padding-bottom: 5px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        ul li::before {
+            content: "⚡";
+            margin-right: 8px;
+        }
+
+        .badge {
+            background-color: var(--accent-red);
+            color: #fff;
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            border: 2px solid var(--dark-brown);
+            margin-left: auto;
+            font-family: 'Bungee', cursive;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            font-weight: 900;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 4px dashed var(--dark-brown);
+        }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>Miguel José Rueda Parra</h1>
-        <p class="subtitle">Estudiante de Diseño Interactivo - Universidad EAFIT</p>
         
-        <p class="contact">
-            📧 <a href="mailto:miruedap@eafit.edu.co">miruedap@eafit.edu.co</a> | 
-            🔗 <a href="https://www.linkedin.com/in/miguel-josé-rueda-parra-239a32428" target="_blank">LinkedIn</a> | 
-            🎨 <a href="https://www.behance.net/miguelrueda28" target="_blank">Behance</a>
-        </p>
+        <!-- HEADER STYLE STREET -->
+        <header>
+            <div class="tag-sticker">INTERACTIVE DESIGN</div>
+            <h1>MIGUEL JOSÉ RUEDA PARRA</h1>
+            <div class="subtitle">EAFIT STUDENT // CONCEPT ARTIST & WEB DESIGNER</div>
+            <p style="font-weight: 700; margin-top: 10px;">
+                Estudiante de Diseño Interactivo con +6 años de experiencia creando piezas visuales, arte conceptual e ilustración independiente.
+            </p>
 
-        <h2>Perfil</h2>
-        <p>Estudiante de Diseño Interactivo con más de 6 años de experiencia como diseñador e ilustrador independiente. Especializado en diseño gráfico, diseño web e ilustración.</p>
+            <div class="contact-bar">
+                <a href="mailto:miruedap@eafit.edu.co" class="contact-btn">✉️ Email</a>
+                <a href="https://www.linkedin.com/in/miguel-josé-rueda-parra-239a32428" target="_blank" class="contact-btn">🔗 LinkedIn</a>
+                <a href="https://www.behance.net/miguelrueda28" target="_blank" class="contact-btn">🎨 Portfolio</a>
+            </div>
+        </header>
 
-        <h2>Experiencia Laboral</h2>
-        <div class="job">
-            <strong>El Laboratorio de Bruna (Librería Nacional)</strong> — Artista conceptual (Jul 2026 - Actualidad)<br>
-            <em>Diseño de arte conceptual para videojuego educativo.</em>
-        </div>
-        <div class="job">
-            <strong>Galabalonca</strong> — Artista conceptual (Feb 2026 - Abr 2026)<br>
-            <em>Diseño de personajes para programa educativo infantil.</em>
-        </div>
-        <div class="job">
-            <strong>VetOncología</strong> — Diseñador web (Ene 2025 - May 2025)<br>
-            <em>Diseño y desarrollo de página web para el negocio.</em>
-        </div>
-        <div class="job">
-            <strong>Comfama</strong> — Diseñador (Ene 2024 - May 2024)<br>
-            <em>Desarrollo de programa de concientización sobre redes sociales.</em>
-        </div>
+        <!-- EXPERIENCIA -->
+        <section>
+            <div class="section-title">TRACK RECORD // EXPERIENCIA</div>
+            
+            <div class="card">
+                <div class="job-title">El Laboratorio de Bruna (Librería Nacional)</div>
+                <div class="job-role">Artista Conceptual</div>
+                <div class="job-date">Julio 2026 - Actualidad</div>
+                <p>Diseño de arte conceptual enfocado en narrativa visual para videojuego educativo.</p>
+            </div>
 
-        <h2>Habilidades y Software</h2>
-        <ul>
-            <li><strong>Diseño:</strong> UX/UI, Ilustración, Piezas gráficas, Identidad visual</li>
-            <li><strong>Herramientas:</strong> Clip Studio Paint, Adobe Illustrator, Photoshop, Adobe Animate, Unity, Visual Studio</li>
-            <li><strong>Idiomas:</strong> Español (Nativo), Inglés (C1), Alemán (B2)</li>
-        </ul>
+            <div class="card">
+                <div class="job-title">Galabalonca</div>
+                <div class="job-role">Artista Conceptual</div>
+                <div class="job-date">Febrero 2026 - Abril 2026</div>
+                <p>Diseño e ilustración de personajes para programa educativo infantil.</p>
+            </div>
+
+            <div class="card">
+                <div class="job-title">VetOncología</div>
+                <div class="job-role">Diseñador Web</div>
+                <div class="job-date">Enero 2025 - Mayo 2025</div>
+                <p>Diseño UX/UI y desarrollo completo de plataforma web para negocio especializado.</p>
+            </div>
+
+            <div class="card">
+                <div class="job-title">Comfama</div>
+                <div class="job-role">Diseñador Visual</div>
+                <div class="job-date">Enero 2024 - Mayo 2024</div>
+                <p>Desarrollo y diseño de programa de concientización sobre dinámicas en redes sociales.</p>
+            </div>
+        </section>
+
+        <!-- SKILLS & SOFTWARE -->
+        <section>
+            <div class="section-title">SKILLS & TECH STACK</div>
+            <div class="skills-grid">
+                
+                <div class="skill-box">
+                    <h3>CREATIVE ARSENAL</h3>
+                    <ul>
+                        <li>UX/UI Design</li>
+                        <li>Ilustración Digital</li>
+                        <li>Identidad Visual</li>
+                        <li>Concept Art</li>
+                    </ul>
+                </div>
+
+                <div class="skill-box" style="background-color: #fff;">
+                    <h3>SOFTWARE STACK</h3>
+                    <ul>
+                        <li>Clip Studio Paint <span class="badge">PRO</span></li>
+                        <li>Adobe Illustrator <span class="badge">MID</span></li>
+                        <li>Photoshop <span class="badge">MID</span></li>
+                        <li>Unity / Visual Studio <span class="badge">MID</span></li>
+                    </ul>
+                </div>
+
+                <div class="skill-box" style="background-color: var(--accent-orange); color: #fff;">
+                    <h3 style="color: #fff; border-color: #fff;">LANGUAGES</h3>
+                    <ul>
+                        <li>Español <span class="badge" style="background: var(--dark-brown);">Nativo</span></li>
+                        <li>Inglés <span class="badge" style="background: var(--dark-brown);">C1</span></li>
+                        <li>Alemán <span class="badge" style="background: var(--dark-brown);">B2</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            ✌️ DESIGNED & CODED BY MIGUEL RUEDA — 2026
+        </footer>
+
     </div>
+
 </body>
 </html>
