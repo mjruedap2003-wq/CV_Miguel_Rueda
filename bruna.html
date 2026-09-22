@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio de Bruna | Miguel Rueda</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@500;700;900&display=swap');
+
+        :root {
+            --bg-color: #E6E4EE;
+            --accent-red: #B7493A;
+            --accent-orange: #FF6F00;
+            --accent-yellow: #FFEE00;
+            --dark-brown: #583E00;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--dark-brown);
+            font-family: 'Space Grotesk', sans-serif;
+            padding: 20px;
+            background-image: radial-gradient(var(--dark-brown) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        /* BOTÓN VOLVER */
+        .back-btn {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Bungee', cursive;
+            padding: 10px 20px;
+            border: 3px solid var(--dark-brown);
+            box-shadow: 4px 4px 0px var(--dark-brown);
+            margin-bottom: 25px;
+            transition: all 0.1s ease;
+        }
+
+        .back-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--dark-brown);
+            background-color: var(--accent-orange);
+        }
+
+        /* HEADER DEL PROYECTO */
+        .project-header {
+            background-color: var(--accent-yellow);
+            border: 4px solid var(--dark-brown);
+            box-shadow: 8px 8px 0px var(--dark-brown);
+            padding: 30px;
+            margin-bottom: 30px;
+            transform: rotate(-0.5deg);
+        }
+
+        h1 {
+            font-family: 'Bungee', cursive;
+            font-size: 2.5rem;
+            color: var(--dark-brown);
+            text-shadow: 3px 3px 0px var(--accent-orange);
+            margin-bottom: 10px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background-color: var(--accent-orange);
+            color: #fff;
+            font-weight: 900;
+            padding: 4px 12px;
+            border: 2px solid var(--dark-brown);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .project-desc {
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        /* GRID DE CONTENIDO & IMÁGENES */
+        .content-section {
+            background-color: #fff;
+            border: 4px solid var(--dark-brown);
+            box-shadow: 6px 6px 0px var(--dark-brown);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .section-subtitle {
+            font-family: 'Bungee', cursive;
+            font-size: 1.4rem;
+            background-color: var(--accent-yellow);
+            display: inline-block;
+            padding: 4px 12px;
+            border: 3px solid var(--dark-brown);
+            margin-bottom: 20px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background-color: var(--bg-color);
+            border: 3px solid var(--dark-brown);
+            box-shadow: 4px 4px 0px var(--dark-brown);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border: 2px solid var(--dark-brown);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .gallery-item caption {
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            font-weight: 900;
+            padding: 20px;
+            border-top: 4px dashed var(--dark-brown);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <a href="index.html" class="back-btn">← VOLVER AL PORTAFOLIO</a>
+
+        <!-- ENCABEZADO PROYECTO -->
+        <header class="project-header">
+            <span class="project-tag">ARTE CONCEPTUAL // ILUSTRACIÓN</span>
+            <h1>LABORATORIO DE BRUNA</h1>
+            <p class="project-desc">
+                <strong>Bruna y su mundo atómico</strong> es un libro infantil de ciencia que tiene el propósito de mostrarle a los niños lo divertido que es la ciencia, todo desde un espacio seguro mediante ilustraciones[cite: 2].
+            </p>
+        </header>
+
+        <!-- SECCIÓN DE GALERÍA / MUESTRAS DE DISEÑO -->
+        <section class="content-section">
+            <div class="section-subtitle">DISEÑO DE ESCENARIOS Y PERSONAJES</div>
+            
+            <div class="gallery-grid">
+                <!-- Reemplaza "ruta-a-tu-imagen.jpg" por el nombre de tus imágenes -->
+                <div class="gallery-item">
+                    <img src="bruna-boceto-habitacion.jpg" alt="Boceto de escenario habitación">
+                    <span>Boceto conceptual de habitación</span>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="bruna-escenario-color.jpg" alt="Escenario final a color">
+                    <span>Render final de escenario a color</span>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="bruna-turnaround-personaje.jpg" alt="Model sheet de Bruna">
+                    <span>Vistas del personaje (Model Sheet)</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            ✌️ MIGUEL RUEDA — INTERACTIVE DESIGN
+        </footer>
+
+    </div>
+
+</body>
+</html>
